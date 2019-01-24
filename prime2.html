@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function to check whether a number is a prime number
+    function isPrime(n) {
+        let prime = true;
+        if ((n !=2 && n % 2 == 0) || (n != 5 && n % 5 == 0)) {
+            prime = false;
+        } else {
+            for (let i = 3, sqr = Math.sqrt(n); i <= sqr && prime; i++) {
+                if (n % i == 0) {
+                    prime = false;
+                }
+            }
+        }
+        return prime;
+    }
+
+    document.write("List of prime number smaller from 1 to 10000 is: <br>")
+    for (let j = 1; j < 10000; j ++) {
+        let result = isPrime(j);
+        if (result) {
+            document.write(j + "<br>");
+        }
+    }
+</script>
+</body>
+</html>
